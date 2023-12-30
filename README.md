@@ -11,7 +11,7 @@ git checkout navigation
 
 npm install -g expo-cli eas-cli
 
-npm install @react-navigation/native
+npm install @react-navigation/native @react-navigation/native-stack
 
 npx expo install react-native-screens react-native-safe-area-context
 
