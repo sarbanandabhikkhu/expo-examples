@@ -10,6 +10,10 @@ export default function Settings({ navigation }) {
         <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
         <Button title="Go to About" onPress={() => navigation.navigate("About")} />
         <Button title="Go to Search" onPress={() => navigation.navigate("Search")} />
+
+        <Button title="Go back" onPress={() => navigation.goBack()} />
+        <Button title="Go to Settings page again" onPress={() => navigation.push("Settings")} />
+        <Button title="Go back to first page in stack" onPress={() => navigation.popToTop()} />
       </View>
     </View>
   );
