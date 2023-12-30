@@ -1,15 +1,19 @@
-# expo-examples
+# React Native Navigation
 
-React Native Expo CLI EAS Build init project
+React Native Stack and Tab Navigation using Expo CLI EAS Build System.
 
 ```bash
 git clone https://github.com/sarbanandabhikkhu/expo-examples.git
 
 cd expo-examples
 
-git checkout init
+git checkout navigation
 
 npm install -g expo-cli eas-cli
+
+npm install @react-navigation/native
+
+npx expo install react-native-screens react-native-safe-area-context
 
 npm install
 
