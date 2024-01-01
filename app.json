@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#d0d0c0"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -18,11 +18,21 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#d0d0c0"
+      },
+      "package": "com.sarbanandabhikkhu.expoexamples"
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#d0d0c0",
+      "barStyle": "light-content"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9b6a8e6b-d3e2-41cb-8199-80b437d878cd"
+      }
     }
   }
 }

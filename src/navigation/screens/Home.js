@@ -53,11 +53,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 48,
-    color: "gold"
+    color: "gold",
+    fontFamily: "BalooDa2-Bold"
   },
   description: {
     marginTop: 10,
     fontSize: 16,
-    color: "goldenrod"
+    color: "goldenrod",
+    fontFamily: "BalooDa2-Medium"
   }
 });
