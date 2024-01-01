@@ -17,6 +17,8 @@ npx expo install @react-navigation/native-stack react-native-safe-area-context r
 
 npx expo install @react-navigation/stack
 
+npx expo install @react-navigation/drawer react-native-reanimated
+
 npm start
 
 eas login
