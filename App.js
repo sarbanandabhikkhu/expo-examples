@@ -1,7 +1,7 @@
-import StackNavigation from "./src/navigation/StackNavigation";
+import Navigation from "./src/navigation";
 
 function App() {
-  return <StackNavigation />;
+  return <Navigation />;
 }
 
 export default App;

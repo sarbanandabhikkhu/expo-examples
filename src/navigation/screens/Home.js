@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { StyleSheet, Button, Text, View } from "react-native";
-// import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Home({ navigation, route }) {
-  // const navigation = useNavigation();
+export default function Home({ route }) {
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (route.params?.post) {
@@ -16,12 +16,10 @@ export default function Home({ navigation, route }) {
     <View style={styles.container}>
       <Text style={styles.title}>Navigation</Text>
       <Text style={styles.description}>Stack and Tab Navigation Demo</Text>
-
       <View style={styles.buttons}>
         <Button
           title="Go to Details"
           onPress={() => {
-            /* Navigate to the Details route with params */
             navigation.navigate("Details", {
               itemId: 50,
               otherParam: "anything you want here"
@@ -35,9 +33,8 @@ export default function Home({ navigation, route }) {
         <Button title="Go to About" onPress={() => navigation.navigate("About")} />
         <Button title="Go to Search" onPress={() => navigation.navigate("Search")} />
         <Button title="Go to Settings" onPress={() => navigation.navigate("Settings")} />
-
-        {/*<Button title="Replaced by Search page" onPress={() => navigation.replace("Search")} />*/}
         <Button title="Go to Home page again" onPress={() => navigation.push("Home")} />
+        <Button title="Replaced by Search page" onPress={() => navigation.replace("Search")} />
       </View>
     </View>
   );
