@@ -17,7 +17,7 @@ npx expo install @react-navigation/native-stack react-native-safe-area-context r
 
 npx expo install @react-navigation/stack react-native-gesture-handler
 
-npx expo install @react-navigation/drawer react-native-reanimated
+npx expo install @react-navigation/drawer react-native-reanimated react-native-gesture-handler
 
 npx expo install expo-font @expo/vector-icons expo-splash-screen
 
