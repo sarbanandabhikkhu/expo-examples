@@ -25,7 +25,7 @@ function DrawerNavigation() {
           width: 260
         },
         drawerType: isLargeScreen ? "permanent" : "slide",
-        overlayColor: "rgba(0,0,0,0.1)",
+        overlayColor: "rgba(0,0,0,0.3)",
         drawerPosition: "left",
         drawerStatusBarAnimation: "slide"
       }}

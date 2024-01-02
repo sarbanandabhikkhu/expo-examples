@@ -19,6 +19,8 @@ npx expo install @react-navigation/stack react-native-gesture-handler
 
 npx expo install @react-navigation/drawer react-native-reanimated react-native-gesture-handler
 
+npx expo install @react-navigation/bottom-tabs
+
 npx expo install expo-font @expo/vector-icons expo-splash-screen
 
 npm start
