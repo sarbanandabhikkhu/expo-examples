@@ -15,15 +15,12 @@ export default function Home({ route }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Home page</Text>
-      <Text style={styles.description}>Stack Navigation</Text>
+      <Text style={styles.description}>Expo Examples by SarbaNanda Bhikkhu</Text>
       <View style={styles.buttons}>
         <Button
           title="Go to Details"
           onPress={() => {
-            navigation.navigate("Details", {
-              itemId: 50,
-              otherParam: "anything you want here"
-            });
+            navigation.navigate("Details", { itemId: 50, otherParam: "anything you want here" });
           }}
         />
         <Button title="Create post" onPress={() => navigation.navigate("CreatePost")} />

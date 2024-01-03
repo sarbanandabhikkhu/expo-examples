@@ -4,7 +4,7 @@ export default function Notifications({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Notifications</Text>
-      <Text style={styles.description}>This is Notifications page in Stack Navigation</Text>
+      <Text style={styles.description}>Expo Examples by SarbaNanda Bhikkhu</Text>
     </View>
   );
 }

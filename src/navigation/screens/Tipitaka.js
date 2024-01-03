@@ -1,9 +1,9 @@
 import { StyleSheet, Button, Text, View } from "react-native";
 
-export default function Profile({ navigation }) {
+export default function Tipitaka({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Profile</Text>
+      <Text style={styles.title}>Tipitaka</Text>
       <Text style={styles.description}>Expo Examples by SarbaNanda Bhikkhu</Text>
     </View>
   );

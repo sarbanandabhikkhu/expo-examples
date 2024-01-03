@@ -1,10 +1,10 @@
 import { StyleSheet, Button, Text, View } from "react-native";
 
-export default function Profile({ navigation }) {
+export default function Dictionary({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Profile</Text>
-      <Text style={styles.description}>Expo Examples by SarbaNanda Bhikkhu</Text>
+      <Text style={styles.title}>Dictionary</Text>
+      <Text style={styles.description}>This is Dictionary page in Stack Navigation</Text>
     </View>
   );
 }

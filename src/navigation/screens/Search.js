@@ -4,7 +4,7 @@ export default function Search({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Search page</Text>
-      <Text style={styles.description}>This is Search page in Navigation</Text>
+      <Text style={styles.description}>Expo Examples by SarbaNanda Bhikkhu</Text>
 
       <View style={styles.buttons}>
         <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />

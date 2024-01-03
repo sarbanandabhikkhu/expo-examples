@@ -4,7 +4,7 @@ export default function About({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>About page</Text>
-      <Text style={styles.description}>This is About page in Navigation</Text>
+      <Text style={styles.description}>Expo Examples by SarbaNanda Bhikkhu</Text>
 
       <View style={styles.buttons}>
         <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />

@@ -1,69 +1,88 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Entypo } from "@expo/vector-icons";
+import { TouchableOpacity, View, Text, Button, useWindowDimensions } from "react-native";
+import { FontAwesome, MaterialIcons, Ionicons, Entypo } from "@expo/vector-icons";
+import { DrawerActions } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { useNavigation } from "@react-navigation/native";
 
 // import NativeStackNavigation from "./NativeStackNavigation";
 // import StackNavigation from "./StackNavigation";
 // import DrawerNavigation from "./DrawerNavigation";
+// import BottomTabNavigation from "./BottomTabNavigation";
 
-import Home from "./screens/Home";
-import About from "./screens/About";
-import Search from "./screens/Search";
-import Profile from "./screens/Profile";
-import Settings from "./screens/Settings";
+import TabNavigator from "./TabNavigator";
+import DrawerContent from "../components/DrawerContent";
 
-const HomeStack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
-function HomeStackScreen() {
+const HeaderNavIcons = () => {
+  const navigation = useNavigation();
+
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="Feed" component={Home} />
-      <HomeStack.Screen name="About" component={About} />
-      <HomeStack.Screen name="Search" component={Search} />
-    </HomeStack.Navigator>
+    <View style={{ marginRight: 10, flex: 1, flexDirection: "row", alignItems: "center" }}>
+      <TouchableOpacity style={{ padding: 10 }} onPress={() => navigation.navigate("Notifications")}>
+        <Entypo name="bell" size={24} color="#333" />
+        <Text
+          style={{
+            position: "absolute",
+            top: 5,
+            left: 20,
+            lineHeight: 16,
+            minWidth: 12,
+            maxHeight: 12,
+            paddingHorizontal: 4,
+            borderRadius: 50,
+            fontSize: 10,
+            fontFamily: "BalooDa2-Bold",
+            backgroundColor: "red",
+            color: "white"
+          }}
+        >
+          9+
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ padding: 10 }} onPress={() => navigation.navigate("Search")}>
+        <Ionicons name="search" size={24} color="#333" />
+      </TouchableOpacity>
+      {/*<Button onPress={() => navigation.navigate("Login")} title="Login" color="#333" />*/}
+    </View>
   );
-}
-
-const SettingsStack = createNativeStackNavigator();
-
-function SettingsStackScreen() {
-  return (
-    <SettingsStack.Navigator>
-      <SettingsStack.Screen name="Appearances" component={Settings} />
-      <SettingsStack.Screen name="Profile" component={Profile} />
-    </SettingsStack.Navigator>
-  );
-}
-
-const Tab = createBottomTabNavigator();
+};
 
 export default function RouteNavigator() {
+  const navigation = useNavigation();
+  const dimensions = useWindowDimensions();
+  const isLargeScreen = dimensions.width >= 768;
+
   return (
-    <Tab.Navigator
+    <Drawer.Navigator
       screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: "goldenrod",
-        tabBarInactiveTintColor: "black",
-        tabBarStyle: {
-          backgroundColor: "#d0d0c0"
-        }
+        headerShown: true,
+        drawerPosition: "left",
+        overlayColor: "rgba(0,0,0,0.5)",
+        drawerStatusBarAnimation: "slide",
+        drawerType: isLargeScreen ? "permanent" : "slide",
+        drawerStyle: { width: 270, flex: 1, backgroundColor: "#efefef" }
       }}
+      drawerContent={props => <DrawerContent {...props} />}
     >
-      <Tab.Screen
-        name="Home"
-        component={HomeStackScreen}
+      <Drawer.Screen
+        name="DhammaChakka"
+        component={TabNavigator}
         options={{
-          tabBarIcon: ({ focused, color, size }) => <Entypo name="home" size={size} color={color} />
+          name: "Home",
+
+          headerLeft: () => (
+            <Ionicons
+              name="menu"
+              size={28}
+              color="333333"
+              style={{ marginLeft: 10 }}
+              onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+            />
+          ),
+          headerRight: () => <HeaderNavIcons />
         }}
       />
-      <Tab.Screen
-        name="Settings"
-        component={SettingsStackScreen}
-        options={{
-          tabBarBadge: "new",
-          tabBarIcon: ({ focused, color, size }) => <Entypo name="cog" size={size} color={color} />
-        }}
-      />
-    </Tab.Navigator>
+    </Drawer.Navigator>
   );
 }

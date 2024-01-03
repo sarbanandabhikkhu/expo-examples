@@ -15,7 +15,7 @@ export default function Feed({ route }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Feed page</Text>
-      <Text style={styles.description}>Stack Navigation</Text>
+      <Text style={styles.description}>Expo Examples by SarbaNanda Bhikkhu</Text>
       <View style={styles.buttons}>
         <Button title="Open Modal" onPress={() => navigation.navigate("ModalCard")} />
         <Button title="Create post" onPress={() => navigation.navigate("CreatePost")} />
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff"
   },
   buttons: {
-    marginTop: 100
+    marginTop: 50
   },
   title: {
     fontSize: 48,
