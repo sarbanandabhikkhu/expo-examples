@@ -4,30 +4,35 @@ React Native Stack and Tab Navigation using Expo CLI EAS Build System.
 
 ## Install & Run this Project
 
+**Clone GitHub repo**
+
 ```bash
-# Clone GitHub repo
 git clone https://github.com/sarbanandabhikkhu/expo-examples.git
 ```
 
+**Navigate to the project directory**
+
 ```bash
-# Navigate to the project directory
 cd expo-examples
 ```
 
+**Checkout to the branch**
+
 ```bash
-# Checkout to the branch
 git checkout navigation
 ```
 
+**Install dependencies**
+
 ```bash
-# Install dependencies
 npx install
 # or
 yarn install
 ```
 
+**Run project**
+
 ```bash
-# Run project
 npx start
 # or
 yarn start
@@ -35,74 +40,85 @@ yarn start
 
 ## Build Project using EAS CLI tool
 
+**Install EAS-CLI globally**
+
 ```bash
-# Install EAS-CLI globally
 npm install -g eas-cli
 ```
 
+**Login your account**
+
 ```bash
-# Login your account
 eas login
 ```
 
+**Confirm login**
+
 ```bash
-# Confirm login
 eas whoami
 ```
 
+**Development build**
+
 ```bash
-# Development build
 npm run build-dev
 # or
 yarn run build-dev
 ```
 
+**Production build**
+
 ```bash
-# Production build
 npm run build-prod
 # or
 yarn run build-prod
 ```
 
+**Preview build**
+
 ```bash
-# Preview build
 npm run build-prev
 # or
 yarn run build-prev
 ```
 
+**Build release mode**
+
 ```bash
-# Build release mode
 npx react-native build-android --mode=release
 # or
 yarn react-native build-android --mode=release
 ```
 
-## Create a brand new project
+### Create new Expo Project
+
+**Create & Navigate to the project directory**
 
 ```bash
-# Create new Expo project & Navigate to the project directory
 npx create-expo-app new-app && cd new-app
 # or
 yarn create-expo-app new-app && cd new-app
 ```
 
+**Pre requisites**
+
 ```bash
-# Pre requisites
 pkg install nodejs
 pkg install yarn
 pkg install git
 pkg upgrade
 ```
 
+**Install dependencies as you needed**
+
 ```bash
-# Install dependencies as you needed
 npx expo install <package>
 yarn expo install <package>
 ```
 
+**Suggest Dependencies**
+
 ```bash
-# Dependencies
 @react-navigation/native
 @react-navigation/native-stack
 @react-navigation/stack
@@ -121,3 +137,4 @@ expo-font
 
 - [Expo CLI](https://docs.expo.dev/more/expo-cli/)
 - [EAS Build](https://docs.expo.dev/build/introduction/)
+- [React Navigation](https://reactnavigation.org/)
