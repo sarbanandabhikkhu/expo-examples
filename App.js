@@ -6,6 +6,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Text style={styles.title}>Expo Examples</Text>
+      <Text style={styles.author}> by SarbaNanda Bhikkhu</Text>
       <Text style={styles.description}>React Native Expo CLI EAS Build Examples</Text>
     </View>
   );
@@ -21,6 +22,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 48,
     color: "gold"
+  },
+  author: {
+    marginTop: 10,
+    fontSize: 24,
+    color: "goldenrod",
+    marginBottom: 50
   },
   description: {
     marginTop: 10,
