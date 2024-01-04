@@ -7,7 +7,7 @@ export default function App() {
       <StatusBar style="auto" />
       <Text style={styles.title}>Expo Examples</Text>
       <Text style={styles.author}> by SarbaNanda Bhikkhu</Text>
-      <Text style={styles.description}>React Native Expo CLI EAS Build Examples</Text>
+      <Text style={styles.description}>React Native Expo EAS CLI Project</Text>
     </View>
   );
 }
