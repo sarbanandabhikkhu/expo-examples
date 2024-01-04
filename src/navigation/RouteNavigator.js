@@ -20,7 +20,7 @@ const HeaderNavIcons = () => {
   return (
     <View style={{ marginRight: 10, flex: 1, flexDirection: "row", alignItems: "center" }}>
       <TouchableOpacity style={{ padding: 10 }} onPress={() => navigation.navigate("Notifications")}>
-        <Entypo name="bell" size={24} color="#333" />
+        <Entypo name="bell" size={24} color="#333333" />
         <Text
           style={{
             position: "absolute",
@@ -41,15 +41,15 @@ const HeaderNavIcons = () => {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity style={{ padding: 10 }} onPress={() => navigation.navigate("Search")}>
-        <Ionicons name="search" size={24} color="#333" />
+        <Ionicons name="search" size={24} color="#333333" />
       </TouchableOpacity>
-      {/*<Button onPress={() => navigation.navigate("Login")} title="Login" color="#333" />*/}
+      {/*<Button onPress={() => navigation.navigate("Login")} title="Login" color="#333333" />*/}
     </View>
   );
 };
 
 export default function RouteNavigator() {
-  const navigation = useNavigation();
+  const { dispatch } = useNavigation();
   const dimensions = useWindowDimensions();
   const isLargeScreen = dimensions.width >= 768;
 
@@ -70,14 +70,13 @@ export default function RouteNavigator() {
         component={TabNavigator}
         options={{
           name: "Home",
-
           headerLeft: () => (
             <Ionicons
               name="menu"
               size={28}
-              color="333333"
+              color="#333333"
               style={{ marginLeft: 10 }}
-              onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+              onPress={() => dispatch(DrawerActions.toggleDrawer())}
             />
           ),
           headerRight: () => <HeaderNavIcons />

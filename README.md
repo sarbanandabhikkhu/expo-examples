@@ -9,24 +9,60 @@ cd expo-examples
 
 git checkout navigation
 
-npm install -g expo-cli eas-cli
+npx install
+yarn install
 
-npx expo install @react-navigation/native
+npx start
+yarn start
 
-npx expo install @react-navigation/native-stack react-native-safe-area-context react-native-screens react-native-gesture-handler
-
-npx expo install @react-navigation/stack react-native-gesture-handler
-
-npx expo install @react-navigation/drawer react-native-reanimated react-native-gesture-handler
-
-npx expo install @react-navigation/bottom-tabs
-
-npx expo install expo-font @expo/vector-icons expo-splash-screen
-
-npm start
+npm install -g eas-cli
 
 eas login
+eas whoami
 
-eas build --profile preview
+yarn run build-dev
+yarn run build-prod
+yarn run build-prev
+
+npx react-native build-android --mode=release
+yarn react-native build-android --mode=release
 
 ```
+
+```bash
+# Create new Expo project & Navigate to the project directory
+npx create-expo-app new-app && cd new-app
+# or
+yarn create-expo-app new-app && cd new-app
+
+# Pre requisites
+pkg install nodejs
+pkg install yarn
+pkg install git
+pkg upgrade
+
+# Install dependencies as you needed
+npx expo install <package>
+yarn expo install <package>
+
+# Dependencies
+@react-navigation/native
+@react-navigation/native-stack
+@react-navigation/stack
+@react-navigation/drawer
+@react-navigation/bottom-tabs
+react-native-safe-area-context
+react-native-gesture-handler
+react-native-reanimated
+react-native-screens
+@expo/vector-icons
+expo-splash-screen
+expo-font
+
+
+
+
+```
+
+See [Expo CLI](https://docs.expo.dev/more/expo-cli/)
+[](https://docs.expo.dev/develop/development-builds/create-a-build/)

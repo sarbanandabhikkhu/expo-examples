@@ -53,7 +53,7 @@ const CustomDrawerItem = ({ label, screen, navigation }) => {
 export default function DrawerContent(props) {
   const navigation = useNavigation();
 
-  console.log(props);
+  // console.log(props.navigation);
 
   return (
     <DrawerContentScrollView {...props}>
