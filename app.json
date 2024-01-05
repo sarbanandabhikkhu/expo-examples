@@ -11,11 +11,24 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.sarbanandabhikkhu.expoexamples"
+    },
+    "plugins": [
+      [
+        "expo-document-picker"
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "9b6a8e6b-d3e2-41cb-8199-80b437d878cd"
       }
     }
   }

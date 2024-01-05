@@ -1,6 +1,6 @@
-# Expo Examples
+# SQLite Demo
 
-React Native Expo EAS CLI Project
+React Native Expo SQLite EAS CLI Project
 
 ## Install & Run this Project
 
@@ -72,8 +72,8 @@ npx create-expo-app new-app && cd new-app
 
 ```bash
 pkg install nodejs
-pkg install yarn
 pkg install git
+pkg install yarn
 pkg upgrade
 ```
 
@@ -83,13 +83,10 @@ pkg upgrade
 npx expo install <package>
 
 # for navigation (stack/drawer/bottom-tab)
-@react-navigation/native
-@react-navigation/native-stack
-@react-navigation/stack
-react-native-safe-area-context
-react-native-gesture-handler
-react-native-reanimated
-react-native-screens
+expo-sqlite
+expo-file-system
+expo-document-picker
+expo-sharing
 
 # for assets & utilities
 @expo/vector-icons
