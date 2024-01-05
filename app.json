@@ -17,6 +17,15 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
-    }
+    },
+    "plugins": [
+      [
+        "@react-native-voice/voice",
+        {
+          "microphonePermission": "Allow to access the microphone",
+          "speechRecognitionPermission": "Allow to securely recognize user speech"
+        }
+      ]
+    ]
   }
 }

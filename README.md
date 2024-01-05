@@ -1,4 +1,4 @@
-# Expo Examples
+# Voice (Speech)
 
 React Native Expo EAS CLI Project
 
@@ -80,16 +80,8 @@ pkg upgrade
 **Install dependencies as you needed**
 
 ```bash
-npx expo install <package>
-
-# for navigation (stack/drawer/bottom-tab)
-@react-navigation/native
-@react-navigation/native-stack
-@react-navigation/stack
-react-native-safe-area-context
-react-native-gesture-handler
-react-native-reanimated
-react-native-screens
+npx expo install @react-native-voice/voice
+npx expo install expo-speech
 
 # for assets & utilities
 @expo/vector-icons
@@ -102,6 +94,7 @@ expo-font
 - [Expo CLI](https://docs.expo.dev/more/expo-cli/)
 - [EAS Build](https://docs.expo.dev/build/introduction/)
 - [React Navigation](https://reactnavigation.org/)
+- [React Native Voice](https://github.com/react-native-voice/voice)
 
 ### Credential
 

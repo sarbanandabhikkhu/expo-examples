@@ -1,13 +1,63 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { useState, useEffect } from "react";
+import { StyleSheet, View, Text, Button } from "react-native";
+import Voice from "@react-native-voice/voice";
+import * as Speech from "expo-speech";
 
 export default function App() {
+  let [started, setStarted] = useState(false);
+  let [results, setResults] = useState([]);
+
+  useEffect(() => {
+    Voice.onSpeechError = onSpeechError;
+    Voice.onSpeechResults = onSpeechResults;
+
+    return () => {
+      Voice.destroy().then(Voice.removeAllListeners);
+    };
+  }, []);
+
+  const startSpeechToText = async () => {
+    await Voice.start("en-US");
+    setStarted(true);
+  };
+
+  const stopSpeechToText = async () => {
+    await Voice.stop();
+    setStarted(false);
+  };
+
+  const onSpeechResults = result => {
+    setResults(result.value);
+  };
+
+  const onSpeechError = error => {
+    console.log(error);
+  };
+
+  const startSpeak = () => {
+    const text = "Hello, SarbaNanda! How are you?";
+    Speech.speak(text);
+  };
+  const stopSpeak = () => {
+    Speech.stop();
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text style={styles.title}>Expo Examples</Text>
-      <Text style={styles.author}> by SarbaNanda Bhikkhu</Text>
-      <Text style={styles.description}>React Native Expo EAS CLI Project</Text>
+
+      {!started ? <Button title="Start Speech" onPress={startSpeechToText} /> : undefined}
+      {started ? <Button title="Stop Speech" onPress={stopSpeechToText} /> : undefined}
+      <View style={styles.box}>
+        {results.map((result, index) => (
+          <Text style={styles.text} key={index}>
+            {result}
+          </Text>
+        ))}
+      </View>
+      <Button title="Start Speak" onPress={startSpeak} />
+      <Button title="Stop Speak" onPress={stopSpeak} />
     </View>
   );
 }
@@ -19,19 +69,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#ffffff"
   },
-  title: {
-    fontSize: 48,
-    color: "gold"
+  box: {
+    paddingVertical: 50
   },
-  author: {
+  text: {
     marginTop: 10,
-    fontSize: 24,
-    color: "goldenrod",
-    marginBottom: 50
-  },
-  description: {
-    marginTop: 10,
-    fontSize: 16,
+    fontSize: 18,
     color: "goldenrod"
   }
 });
